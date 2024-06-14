@@ -43,7 +43,7 @@ public class FindElementsTests {
   }
 
   @Test
-  public void findElementById(){
+  public void findElementById() {
     //  by id;
     driver.findElement(By.id("city"));
 
@@ -96,7 +96,7 @@ public class FindElementsTests {
   }
 
   @Test
-  public void findElementByXpath(){
+  public void findElementByXpath() {
     //  //*[@attr='value']
 
     // tag name -> //tag
@@ -126,7 +126,39 @@ public class FindElementsTests {
 
     //start -> //tag[starts-with(@attr,'startOfValue')]
     driver.findElement(By.xpath("//input[starts-with(@class,'ng-untouched')]"));
+
+    // css div>span -> xpath //div/span
+    // css div span -> xpath //div//span
+
+//
+
   }
+
+  @Test
+  public void findElementByXpath2() {
+
+    //parent
+    driver.findElement(By.xpath("//h1/parent::*"));
+    driver.findElement(By.xpath("//h1/.."));
+    driver.findElement(By.xpath("//h1/parent::div"));
+
+    //  ancestor
+    driver.findElement(By.xpath("//h1/ancestor::*")); // all
+    driver.findElement(By.xpath("//h1/ancestor::div")); // two options
+    driver.findElement(By.xpath("//h1/ancestor::div[2]")); // one option
+
+    // folowing-sibling
+    driver.findElement(By.xpath("//h1/following-sibling::*")); // all
+    driver.findElement(By.xpath("//h1/ancestor::form")); // one option
+
+    // preceding-sibling
+    driver.findElement(By.xpath("//h2/preceding-sibling::*")); // all
+    driver.findElement(By.xpath("//h1/preceding::form")); // one option
+
+
+
+  }
+
 
   @AfterMethod(enabled = true)
   public void tearDown() {
