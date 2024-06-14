@@ -6,9 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class FirstSeleniumTest {
-
-  WebDriver driver;
+public class FirstSeleniumTest extends TestBase {
 
   //before - setUp
   @BeforeMethod

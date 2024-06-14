@@ -8,13 +8,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import javax.swing.*;
 import java.time.Duration;
 import java.util.List;
 
-public class FindElementsTests {
-
-  WebDriver driver;
+public class FindElementsTests extends TestBase{
 
   @BeforeMethod
   public void setUp() {
@@ -157,12 +154,6 @@ public class FindElementsTests {
 
 
 
-  }
-
-
-  @AfterMethod(enabled = true)
-  public void tearDown() {
-    driver.quit();
   }
 
 }
